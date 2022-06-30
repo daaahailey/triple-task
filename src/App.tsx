@@ -1,12 +1,5 @@
-import React from 'react';
-
 function App() {
-  return (
-    <div>
-      <header>
-      </header>
-    </div>
-  );
+  return <div>app</div>
 }
 
-export default App;
+export default App
