@@ -88,9 +88,9 @@ export const Banner = () => {
           {indicatorData.map((item: AnimatedTextProps) => (
             <AnimatedText
               key={item.id}
-              number={700}
-              unitText="만 명"
-              targetText="의 여행자"
+              number={item.number}
+              unitText={item.unitText}
+              targetText={item.targetText}
             />
           ))}
         </li>
