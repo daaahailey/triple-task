@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react'
 
-import { AnimatedTextProps } from '../@types/global/AnimatedTextProps'
+import { AnimatedTextProps } from '../@types/AnimatedTextProps'
 
 const AboutText = css`
   font-size: 36px;
