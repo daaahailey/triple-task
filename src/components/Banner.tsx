@@ -6,6 +6,7 @@ import { TripleLogoImg, PlayStoreImg, AppStoreImg } from '../images'
 import { AnimatedTextProps } from '../@types/global/AnimatedTextProps'
 
 import { AnimatedText } from './AnimatedText'
+import { Award } from './Award'
 
 const BannerContainer = css`
   position: relative;
@@ -43,40 +44,35 @@ const AwardedIcons = css`
   display: flex;
 `
 
-const PlayStore = css`
-  box-sizing: border-box;
-  height: 54px;
-  display: flex;
-  margin: 5px 0;
-  align-items: center;
-  padding-left: 62px;
-  margin-right: 39px;
-  background: url(${PlayStoreImg}) no-repeat;
-  background-size: 54px 54px;
-  color: rgba(58, 58, 58, 0.8);
-  line-height: 22px;
-  font-size: 14px;
-  font-weight: bold;
-`
-const AppStore = css`
-  box-sizing: border-box;
-  height: 54px;
-  display: flex;
-  margin: 5px 0;
-  align-items: center;
-  padding-left: 62px;
-  background: url(${AppStoreImg}) no-repeat;
-  background-size: 54px 54px;
-  color: rgba(58, 58, 58, 0.8);
-  line-height: 22px;
-  font-size: 14px;
-  font-weight: bold;
-`
+interface AwardProps {
+  id?: number
+  year: number
+  where: string
+  award: string
+  img: string
+}
 
 const indicatorData = [
   { id: 0, number: 700, unitText: '만 명', targetText: '의 여행자' },
   { id: 1, number: 100, unitText: '만 개', targetText: '의 여행 리뷰' },
   { id: 2, number: 470, unitText: '만 개', targetText: '의 여행 일정' },
+]
+
+const awardsData = [
+  {
+    id: 0,
+    year: 2018,
+    where: '구글 플레이스토어',
+    award: '올해의 앱 최우수상 수상',
+    img: PlayStoreImg,
+  },
+  {
+    id: 1,
+    year: 2018,
+    where: '애플 앱스토어',
+    award: '오늘의 여행앱 선정',
+    img: AppStoreImg,
+  },
 ]
 
 export const Banner = () => {
@@ -95,16 +91,15 @@ export const Banner = () => {
           ))}
         </li>
         <li css={AwardedIcons}>
-          <p css={PlayStore}>
-            2018 구글 플레이스토어
-            <br aria-hidden="true" />
-            올해의 앱 최우수상 수상
-          </p>
-          <p css={AppStore}>
-            2018 애플 앱스토어
-            <br aria-hidden="true" />
-            오늘의 여행앱 선정
-          </p>
+          {awardsData.map((item: AwardProps) => (
+            <Award
+              key={item.id}
+              year={item.year}
+              where={item.where}
+              award={item.award}
+              img={item.img}
+            />
+          ))}
         </li>
         <li css={TripleLogo}>
           <p css={DateText}>2021년 12월 기준</p>
