@@ -2,6 +2,8 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react'
 
+import { AnimatedTextProps } from '../@types/global/AnimatedTextProps'
+
 const AboutText = css`
   font-size: 36px;
   margin-bottom: 20px;
@@ -11,18 +13,12 @@ const AboutText = css`
     font-weight: 700;
   }
 `
-interface AnimatedTextType {
-  id?: number
-  number: number
-  unitText: string
-  targetText: string
-}
 
 export const AnimatedText = ({
   number,
   unitText,
   targetText,
-}: AnimatedTextType) => {
+}: AnimatedTextProps) => {
   return (
     <p css={AboutText}>
       <strong>

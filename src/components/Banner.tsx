@@ -3,6 +3,7 @@
 import { css, jsx } from '@emotion/react'
 
 import { TripleLogoImg, PlayStoreImg, AppStoreImg } from '../images'
+import { AnimatedTextProps } from '../@types/global/AnimatedTextProps'
 
 import { AnimatedText } from './AnimatedText'
 
@@ -71,12 +72,6 @@ const AppStore = css`
   font-size: 14px;
   font-weight: bold;
 `
-interface AnimatedTextType {
-  id?: number
-  number: number
-  unitText: string
-  targetText: string
-}
 
 const indicatorData = [
   { id: 0, number: 700, unitText: '만 명', targetText: '의 여행자' },
@@ -90,7 +85,7 @@ export const Banner = () => {
       {/* <h2 className="a11y-text-hidden">트리플 앱 소개</h2> */}
       <ul>
         <li css={AboutTriple}>
-          {indicatorData.map((item: AnimatedTextType) => (
+          {indicatorData.map((item: AnimatedTextProps) => (
             <AnimatedText
               key={item.id}
               number={700}
