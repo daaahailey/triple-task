@@ -3,7 +3,8 @@
 import { css, jsx } from '@emotion/react'
 
 import { TripleLogoImg, PlayStoreImg, AppStoreImg } from '../images'
-import { AnimatedTextProps } from '../@types/global/AnimatedTextProps'
+import { AnimatedTextProps } from '../@types/AnimatedTextProps'
+import { AwardProps } from '../@types/AwardProps'
 
 import { AnimatedText } from './AnimatedText'
 import { Award } from './Award'
@@ -40,17 +41,9 @@ const DateText = css`
   transform: translateX(-50%);
 `
 
-const AwardedIcons = css`
+const AwardList = css`
   display: flex;
 `
-
-interface AwardProps {
-  id?: number
-  year: number
-  where: string
-  award: string
-  img: string
-}
 
 const indicatorData = [
   { id: 0, number: 700, unitText: '만 명', targetText: '의 여행자' },
@@ -90,7 +83,7 @@ export const Banner = () => {
             />
           ))}
         </li>
-        <li css={AwardedIcons}>
+        <li css={AwardList}>
           {awardsData.map((item: AwardProps) => (
             <Award
               key={item.id}

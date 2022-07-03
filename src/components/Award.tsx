@@ -2,6 +2,8 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/react'
 
+import { AwardProps } from '../@types/AwardProps'
+
 const AwardStyle = css`
   box-sizing: border-box;
   height: 54px;
@@ -18,14 +20,6 @@ const AwardStyle = css`
     margin-right: 0;
   }
 `
-
-interface AwardProps {
-  key?: number
-  year: number
-  where: string
-  award: string
-  img: string
-}
 
 export const Award = ({ year, where, award, img }: AwardProps) => {
   return (
