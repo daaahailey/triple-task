@@ -4,7 +4,7 @@ import { css, jsx } from '@emotion/react'
 
 import { AwardProps } from '../@types/AwardProps'
 
-const AwardStyle = css`
+const AwardStyle = (img: string) => css`
   box-sizing: border-box;
   height: 54px;
   display: flex;
@@ -16,6 +16,8 @@ const AwardStyle = css`
   line-height: 22px;
   font-size: 14px;
   font-weight: bold;
+  background: url(${img});
+  background-size: 54px 54px;
   &:nth-last-of-type(1) {
     margin-right: 0;
   }
@@ -23,13 +25,7 @@ const AwardStyle = css`
 
 export const Award = ({ year, where, award, img }: AwardProps) => {
   return (
-    <p
-      css={AwardStyle}
-      style={{
-        background: `url(${img}) no-repeat`,
-        backgroundSize: '54px 54px',
-      }}
-    >
+    <p css={AwardStyle(img)}>
       {year} {where}
       <br aria-hidden="true" />
       {award}
