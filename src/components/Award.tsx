@@ -16,7 +16,7 @@ const AwardStyle = (img: string) => css`
   line-height: 22px;
   font-size: 14px;
   font-weight: bold;
-  background: url(${img});
+  background: url(${img}) no-repeat;
   background-size: 54px 54px;
   &:nth-last-of-type(1) {
     margin-right: 0;
