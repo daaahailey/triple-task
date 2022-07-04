@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { css, jsx } from '@emotion/react'
+import { css, jsx, keyframes } from '@emotion/react'
 
 import { TripleLogoImg, PlayStoreImg, AppStoreImg } from '../images'
 import { AnimatedTextProps } from '../@types/AnimatedTextProps'
@@ -8,6 +8,17 @@ import { AwardProps } from '../@types/AwardProps'
 
 import { AnimatedText } from './AnimatedText'
 import { Award } from './Award'
+
+const FadeIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`
 
 const BannerContainer = css`
   position: relative;
@@ -21,6 +32,8 @@ const AboutTriple = css`
   position: relative;
   width: 427px;
   margin-bottom: 50px;
+  animation-delay: 2s;
+  animation: ${FadeIn} 700ms 100ms ease-in;
 `
 
 const TripleLogo = css`
@@ -33,6 +46,7 @@ const TripleLogo = css`
   background-size: contain;
   font-size: 15px;
   color: rgba(58, 58, 58, 0.7);
+  animation: ${FadeIn} 700ms ease-in;
 `
 const DateText = css`
   position: absolute;
@@ -43,6 +57,7 @@ const DateText = css`
 
 const AwardList = css`
   display: flex;
+  animation: ${FadeIn} 700ms 200ms ease-in;
 `
 
 const indicatorData = [
