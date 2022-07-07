@@ -86,7 +86,7 @@ const awardsData = [
 export const Banner = () => {
   return (
     <section css={BannerContainer}>
-      {/* <h2 className="a11y-text-hidden">트리플 앱 소개</h2> */}
+      <h2 className="a11y-text-hidden">트리플 앱 소개</h2>
       <ul>
         <li css={AboutTriple}>
           {indicatorData.map((item: AnimatedTextProps) => (
