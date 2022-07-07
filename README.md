@@ -1,7 +1,7 @@
 # Triple task
 ## 프로젝트 설치/실행
 ```
-git clone https://github.com/daaahailey/triple-task
+git clone https://github.com/daaahailey/triple-task.git
 npm install
 npm start
 ```
