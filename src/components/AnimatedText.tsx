@@ -3,6 +3,7 @@
 import { css, jsx } from '@emotion/react'
 
 import { AnimatedTextProps } from '../@types/AnimatedTextProps'
+import { useCountUp } from '../hook/useCountUp'
 
 const AboutText = css`
   font-size: 36px;
@@ -19,12 +20,10 @@ export const AnimatedText = ({
   unitText,
   targetText,
 }: AnimatedTextProps) => {
+  const countNumber = useCountUp(number)
   return (
     <p css={AboutText}>
-      <strong>
-        {number}
-        {unitText}
-      </strong>
+      <strong>{`${countNumber} ${unitText}`}</strong>
       {targetText}
     </p>
   )
